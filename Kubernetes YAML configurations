@@ -9,7 +9,7 @@ kubectl describe pods -A
 
 ##Deploy the docker image to local Kubernetes cluster
 
-kubectl create deploy prob_predict_api --image=andyy5/prob_predict_api
+kubectl create deploy prob_predict_api --image=probability_predict_dockerized/prob_predict_api
 
 ##Alternatively, create a deployment with a YAML file
 
@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: prob_predict_api
-        image: andyy5/prob_predict_api
+        image: probability_predict_dockerized/prob_predict_api
 		
 ##Create a service:
 kubectl expose deploy prob_predict_api --type=ClusterIP --port=80
